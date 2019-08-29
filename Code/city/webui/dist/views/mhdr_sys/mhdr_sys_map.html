@@ -1,0 +1,72 @@
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">字典映射 - 检索</div>
+                <div class="layui-card-body">
+                    <div class="layui-form layui-form-pane" lay-filter="LAY-sys-map-query-form">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">字典类型</label>
+                                <div class="layui-input-inline">
+                                    <select name="dictType" lay-filter="dictType" hyd-dict="MainIndex" lay-verify="required" lay-search>
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button class="layui-btn" lay-submit lay-filter="mapQuery">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">直报系统 - 字典</div>
+                <div class="layui-card-body">
+                    <table id="LAY-sys-map-center" lay-filter="LAY-sys-map-center"></table>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">院内 - 映射</div>
+                <div class="layui-card-body">
+                    <table id="LAY-sys-map-inner" lay-filter="LAY-sys-map-inner"></table>
+                    <script type="text/html" id="LAY-sys-map-inner-dataState">
+                        <input type="checkbox" name="dataState" value="1|0" lay-skin="switch" lay-filter="dataState" lay-text="启用|停用" {{ d.dataState == 1 ? 'checked' : '' }}>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="LAY-sys-map-inner-window">
+    <div style="padding:20px 30px 10px 30px;text-align: center;">
+        <div class="layui-form layui-form-pane" lay-filter="LAY-sys-map-inner-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">编号</label>
+                <div class="layui-input-block">
+                    <input type="text" name="codeValue" placeholder="请输入编号" lay-verify="required" lay-verType="tips" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="codeName" placeholder="请输入名称" lay-verify="required" lay-verType="tips" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-hide" lay-submit lay-filter="innerSubmit"></button>
+            </div>
+        </div>
+    </div>
+</script>
+<script>
+layui.use('mhdr_sys_map', layui.factory('mhdr_sys_map'));
+</script>
+
+

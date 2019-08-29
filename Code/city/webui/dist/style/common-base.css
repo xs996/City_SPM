@@ -1,0 +1,70 @@
+.hyd-form-required-span {color: #FF5722;text-align: center;font-size: 18px;position: relative;top: 5px;left: 2px;}
+.hyd-form-label {width: 120px !important;}
+.hyd-input-block {min-width: 450px; margin-left: 150px !important;}
+input.layui-disabled {background-color:rgb(235, 235, 228)!important;color:rgb(84, 84, 84)!important;}
+.hyd-form .layui-field-title {border-color: #5FB878;color: #5FB878;}
+
+/* 用药情况 */
+[lay-id=LAY-report-patcard-add-drug] {min-width: 500px;}
+[lay-id=LAY-report-patcard-add-drug] .layui-table-tool {padding:4px;min-height:40px;}
+[lay-id=LAY-report-patcard-add-drug] .layui-table-header {display: none;}
+[lay-id=LAY-report-patcard-add-drug] .layui-table-cell {padding: 0 6px;}
+
+[lay-id=LAY-report-patcard-view-drug] {min-width: 500px;}
+[lay-id=LAY-report-patcard-view-drug] .layui-table-tool {padding:4px;min-height:40px;}
+[lay-id=LAY-report-patcard-view-drug] .layui-table-header {display: none;}
+[lay-id=LAY-report-patcard-view-drug] .layui-table-cell {padding: 0 6px;}
+
+.hyd-ui-air {box-shadow: none; margin-left: -40px;border: 1px solid #d2d2d2;}
+.hyd-ui-air .layui-layer-title {height: 32px;line-height: 32px;font-size: 12px;padding: 0 80px 0 10px;}
+.hyd-ui-air .layui-layer-setwin {right: 10px; top: 10px;}
+.hyd-timeline {padding: 10px;}
+.hyd-timeline .layui-timeline-content {line-height: 18px; font-size: 12px;}
+.hyd-timeline .layui-timeline-content p {line-height: 18px; font-size: 12px;}
+.hyd-timeline .layui-timeline-axis {width: 20px;height: 20px;line-height: 20px;font-size: 13px;color: #5FB878;}
+
+[lay-filter=LAY-report-patinfo-tab].hyd-no-add .hyd-patinfo-add {display: none;}
+[lay-filter=LAY-report-patcard-tab].hyd-no-audit [action=audit] {display: none;}
+[lay-filter=LAY-report-patinfo-tab].hyd-no-audit [action=audit] {display: none;}
+
+[lay-id=LAY-report-patinfo-add-drug] {min-width: 500px;}
+[lay-id=LAY-report-patinfo-add-drug] .layui-table-tool {padding:4px;min-height:40px;}
+[lay-id=LAY-report-patinfo-add-drug] .layui-table-header {display: none;}
+[lay-id=LAY-report-patinfo-add-drug] .layui-table-cell {padding: 0 6px;}
+
+[lay-id=LAY-report-patinfo-add-drug-guide] {min-width: 500px;}
+[lay-id=LAY-report-patinfo-add-drug-guide] .layui-table-tool {padding:4px;min-height:40px;}
+[lay-id=LAY-report-patinfo-add-drug-guide] .layui-table-header {display: none;}
+[lay-id=LAY-report-patinfo-add-drug-guide] .layui-table-cell {padding: 0 6px;}
+
+[lay-id=LAY-report-patinfo-view-drug] {min-width: 500px;}
+[lay-id=LAY-report-patinfo-view-drug] .layui-table-tool {padding:4px;min-height:40px;}
+[lay-id=LAY-report-patinfo-view-drug] .layui-table-header {display: none;}
+[lay-id=LAY-report-patinfo-view-drug] .layui-table-cell {padding: 0 6px;}
+
+[lay-id=LAY-report-patinfo-view-drug-guide] {min-width: 500px;}
+[lay-id=LAY-report-patinfo-view-drug-guide] .layui-table-tool {padding:4px;min-height:40px;}
+[lay-id=LAY-report-patinfo-view-drug-guide] .layui-table-header {display: none;}
+[lay-id=LAY-report-patinfo-view-drug-guide] .layui-table-cell {padding: 0 6px;}
+
+/* Quick Page */
+.hyd-quick-body {position: absolute;left: 0;right: 0;top: 0;bottom: 0;z-index: 998;width: auto;overflow: hidden; overflow-y: auto;box-sizing: border-box}
+.hyd-quick-body .layui-footer {left: 0;}
+.hyd-quick-body .layui-footer [action=back] {display: none;}
+
+
+/* table click background*/
+.hyd-table-click-background{background-color: #f2f2f2;}
+
+
+.hyd-search-input{
+    height: 30px;
+}
+.hyd-search-icon{
+    top: 0;
+    right: 0;
+    width: 40px;
+    text-align: center;
+    padding: 5px 0px;
+    position: absolute;
+}

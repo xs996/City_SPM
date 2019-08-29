@@ -1,0 +1,339 @@
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">浏览出院信息单</div>
+                        <div class="layui-card-body">
+                            <div class="layui-form hyd-form" lay-filter="LAY-report-patinfo-view-form">
+                                <fieldset class="layui-elem-field layui-field-title">
+                                    <legend>报告地区</legend>
+                                </fieldset>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">报告地区<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="ZoneNam" lay-verify="required" autocomplete="off" placeholder="" class="layui-input layui-disabled" disabled>
+                                            <input type="text" name="ZoneCd" lay-verify="required" autocomplete="off" placeholder="" class="layui-input layui-hide">
+                                            <input type="text" name="cd" autocomplete="off" placeholder="" class="layui-input layui-hide">
+                                            <input type="text" name="linkCd" autocomplete="off" placeholder="" class="layui-input layui-hide">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">报告单位<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="OrgNam" lay-verify="required" autocomplete="off" placeholder="" class="layui-input layui-disabled" disabled>
+                                            <input type="text" name="OrganCd" lay-verify="required" autocomplete="off" placeholder="" class="layui-input layui-hide">
+                                        </div>
+                                    </div>
+                                </div>
+                                <fieldset class="layui-elem-field layui-field-title">
+                                    <legend>基本信息</legend>
+                                </fieldset>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">省网报告卡号</label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="relateLinkNum" autocomplete="off" placeholder="省网报告卡号，无需填写" class="layui-input layui-disabled" lay-filter="Add_relateLinkNum" disabled>
+                                            <input type="text" name="InciReportNum" autocomplete="off" class="layui-input layui-hide">
+                                            <input type="text" name="InciReportCd" autocomplete="off" class="layui-input layui-hide">
+                                            <input type="text" name="relateCd" autocomplete="off" placeholder="" class="layui-input layui-hide">
+                                            <input type="text" name="relateLinkCd" autocomplete="off" placeholder="" class="layui-input layui-hide">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">病案号<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-inline hyd-input-block" style="margin-left: 0 !important;min-width:400px;">
+                                            <input type="text" name="InPatNo" lay-verify="required" autocomplete="off" placeholder="" class="layui-input" >
+                                            
+                                        </div>
+                                        <div class="layui-form-mid"><i class="layui-icon" id="admQuery" style="font-size: 20px;cursor:pointer;">&#xe615;</i></div>
+                                    </div>
+
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">患者姓名<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="PatNam" lay-verify="required|PatNam" autocomplete="off" placeholder="" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">性别<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <select name="GenderCd" lay-verify="required" class="layui-input" hyd-dict="Sex" lay-filter="Add_GenderCd">
+                                                <option value="">请选择</option>
+                                            </select>
+                                            <input type="text" name="Gender" autocomplete="off" class="layui-input layui-hide" lay-filter="Add_Gender">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">证件类型<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <select name="IDTypeCd" lay-verify="required" class="layui-input" hyd-dict="CertType" lay-filter="Add_IDTypeCd" >
+                                                <option value="">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                     <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">证件号码<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-inline hyd-input-block" style="margin-left: 0 !important;min-width:400px;">
+                                            <input type="text" name="IDCode" lay-verify="IDCode" autocomplete="off" placeholder="" class="layui-input" lay-filter="Add_IDCode">
+                                        </div>
+                                        <div class="layui-form-mid"><i class="layui-icon" id="idCardQuery" style="font-size: 20px;cursor:pointer;">&#xe615;</i></div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">出生日期<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="BirthDate" autocomplete="off" placeholder="yyyy-MM-dd" class="layui-input" lay-filter="Add_BirthDate" lay-verify="required|date">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">国籍<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <select name="NationalityCd" lay-verify="required" class="layui-input" hyd-dict="Nationality" lay-search="" >
+                                                <option value="">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <fieldset class="layui-elem-field layui-field-title">
+                                    <legend>病情信息</legend>
+                                </fieldset>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">入院日期<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="AdmissionDate" lay-verify="required|AdmissionDate" autocomplete="off" placeholder="" class="layui-input" lay-filter="Add_AdmissionDate">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">出院日期<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="DischargeDate" lay-verify="required|DischargeDate" autocomplete="off" placeholder="" class="layui-input" lay-filter="Add_DischargeDate">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">既往住院情况<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-form-mid">曾住精神专科/综合医院精神科</div>
+                                        <div class="layui-input-inline" style="width: 100px;">
+                                            <input type="text" name="InMentalHos" lay-verify="required|InMentalHos" autocomplete="off" placeholder="" class="layui-input">
+                                        </div>
+                                        <div class="layui-form-mid">次</div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">疾病名称<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <select name="DischgDiagCd" lay-verify="required" class="layui-input" hyd-dict="ICD" lay-search="" lay-filter="Add_DischgDiagCd">
+                                                <option value="">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">ICD-10编码<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="DiagICD" lay-verify="required" autocomplete="off" placeholder=""  lay-filter="Add_DiagICD" class="layui-input layui-disabled" disabled>
+                                            <input type="text" name="Disease" autocomplete="off" placeholder=""  lay-filter="Add_Disease" class="layui-input layui-hide">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">既往危险行为<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block" hyd-dict="Dangerous" hyd-dict-render="checkbox" hyd-dict-field="RiskActCdBox">
+                                        </div>
+                                        <input type="text" name="RiskActCd" lay-verify="RiskActCd" autocomplete="off" placeholder="" class="layui-input layui-hide" lay-filter="Add_RiskActCd">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">既往危险评估<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <select name="RiskCd" lay-verify="required" class="layui-input" hyd-dict="Risk">
+                                                <option value="">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">勿需服药<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block" hyd-dict="Whether" hyd-dict-render="radio" hyd-dict-field="IfNomedication1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">目前用药情况</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <table class="layui-table" lay-filter="LAY-report-patinfo-view-drug" id="LAY-report-patinfo-view-drug"></table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">确诊日期<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="DiagnosisDate" lay-verify="required|DiagnosisDate" autocomplete="off" placeholder="" class="layui-input" lay-filter="Add_DiagnosisDate">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">住院疗效</label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <select name="EffectCd" class="layui-input" hyd-dict="TreEff">
+                                                <option value="">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <fieldset class="layui-elem-field layui-field-title">
+                                    <legend>下一步治疗方案及康复建议</legend>
+                                </fieldset>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">勿需服药<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block" hyd-dict="Whether" hyd-dict-render="radio" hyd-dict-field="IfNomedication2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">用药指导</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <table class="layui-table" lay-filter="LAY-report-patinfo-view-drug-guide" id="LAY-report-patinfo-view-drug-guide"></table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">康复措施<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block" hyd-dict="RehMeasures" hyd-dict-render="checkbox" hyd-dict-field="MeasuresCdBox">
+                                        </div>
+                                        <input type="text" name="MeasuresCd" lay-verify="MeasuresCd" autocomplete="off" placeholder="" class="layui-input layui-hide" lay-filter="Add_MeasuresCd">
+                                    </div>
+                                    <div class="layui-inline">
+                                        <input type="text" name="OtherMeasure" autocomplete="off" placeholder="其他描述" class="layui-input layui-hide" lay-filter="Add_OtherMeasure">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-form-text">
+                                    <label class="layui-form-label hyd-form-label">其他注意事项</label>
+                                    <div class="layui-input-block hyd-input-block">
+                                        <textarea name="Miscellaneous" lay-verify="Miscellaneous" class="layui-textarea"></textarea>
+                                    </div>
+                                </div>
+                                <fieldset class="layui-elem-field layui-field-title">
+                                    <legend>报告者信息</legend>
+                                </fieldset>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">经治医师<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="FillDoctorNam" lay-verify="required" autocomplete="off" placeholder="" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">联系电话<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="DocTel" lay-verify="required|DocTel" autocomplete="off" placeholder="" class="layui-input">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="layui-form-item" style="margin-bottom: 100px;">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label hyd-form-label">填表日期<span class="hyd-form-required-span">*</span></label>
+                                        <div class="layui-input-block hyd-input-block">
+                                            <input type="text" name="FillDate" lay-verify="required|FillDate" autocomplete="off" placeholder="" class="layui-input" lay-filter="Add_FillDate">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-footer" style="z-index:900;background: #f2f2f2;">
+                                        <button class="layui-btn " action="back" lay-filter="report-patinfo-view-back">返回</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-header-toolbar">
+    <button lay-event="add" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon layui-icon-view-1"></i><span style="margin-right: 3px;font-size: 13px!important;">添加</span></button>
+</script>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-guide-header-toolbar">
+    <button lay-event="add" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon layui-icon-view-1"></i><span style="margin-right: 3px;font-size: 13px!important;">添加</span></button>
+</script>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-toolbar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete" style="margin-right:0;"></i></a>
+</script>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-guide-toolbar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete" style="margin-right:0;"></i></a>
+</script>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-column">
+    {{# if(d.isLong){ }}
+    <span class="layui-badge layui-bg-orange">长效</span> {{d.vDrug}}
+    {{# } else { }}
+    {{d.vDrug}}
+    {{# } }}
+</script>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-guide-column">
+    {{# if(d.isLong){ }}
+    <span class="layui-badge layui-bg-orange">长效</span> {{d.vDrug}}
+    {{# } else { }}
+    {{d.vDrug}}
+    {{# } }}
+</script>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-radio-column">
+    {{# layui.each(d.vSpec, function(index, item) { }}
+    <input type="radio" lay-filter="DrugSpecifications" name="vSpec-{{d.Cd}}" value="{{item}}" title="{{item}}" {{ d.vDrugSpecifications === item ? ('checked=""') : ''}}>
+    {{# });}}
+</script>
+
+<script type="text/html" id="LAY-report-patinfo-view-drug-guide-radio-column">
+    {{# layui.each(d.vSpec, function(index, item) { }}
+    <input type="radio" lay-filter="DrugSpecifications-G" name="vSpec-G-{{d.Cd}}" value="{{item}}" title="{{item}}" {{ d.vDrugSpecifications === item ? ('checked=""') : ''}}>
+    {{# });}}
+</script>
+
+<script type="text/html" id="LAY-air-drug-toolbar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-view-circle" style="margin-right:0;"></i></a>
+</script>
+
+<script type="text/html" id="LAY-air-drug-guide-toolbar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-view-circle" style="margin-right:0;"></i></a>
+</script>
+
+<script type="text/html" id="LAY-air-adm-toolbar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-view-circle" style="margin-right:0;"></i></a>
+</script>
+<script type="text/html" id="LAY-air-idcard-toolbar">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-view-circle" style="margin-right:0;"></i></a>
+</script>
+<script>
+layui.use('mhdr_report_out_patinfo_view', layui.factory('mhdr_report_out_patinfo_view'));
+</script>
+

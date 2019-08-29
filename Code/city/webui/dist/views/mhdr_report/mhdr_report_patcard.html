@@ -1,0 +1,101 @@
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">患者报告卡 - 检索</div>
+                        <div class="layui-card-body">
+                            
+                            <div class="layui-form layui-form-pane" lay-filter="LAY-report-patcard-query-form">
+                             
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">患者姓名</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="patName" placeholder="" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">证件号码</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="patIDCard" placeholder="" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">创建时间</label>
+                                        <div class="layui-input-inline">
+                                            <div class="layui-input-inline">
+                                                <input type="text" class="layui-input" name="createTime" id="createDate" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">性别</label>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="patSex" value="" title="全部" checked="">
+                                            <input type="radio" name="patSex" value="男" title="男">
+                                            <input type="radio" name="patSex" value="女" title="女">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">疾病名称</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="patDisease" placeholder="" autocomplete="off" class="layui-input">
+                                        <input type="text" name="patDiseaseCd" placeholder="" autocomplete="off" class="layui-input layui-hide">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <button class="layui-btn" lay-submit lay-filter="reportQuery">查询</button>
+                                    <button class="layui-btn" lay-submit lay-filter="reportReset">重置</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-tab layui-tab-brief" lay-filter="LAY-report-patcard-tab">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">未审核</li>
+                                <li>已审核</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <table id="LAY-report-patcard-unaudit" lay-filter="LAY-report-patcard-unaudit"></table>
+                                </div>
+                                <div class="layui-tab-item">
+                                    <table id="LAY-report-patcard-audited" lay-filter="LAY-report-patcard-audited"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="LAY-report-patcard-unaudit-header-toolbar">
+    <div class="layui-btn-group">
+        <button lay-event="add" class="layui-btn layui-btn-sm"><i class="layui-icon layui-icon-add-1"></i><span style="margin-right: 3px;font-size: 13px!important;">增加</span></button>
+        <button lay-event="batch-audit" action="audit" class="layui-btn layui-btn-sm"><i class="layui-icon layui-icon-survey"></i><span style="margin-right: 3px;font-size: 13px!important;">审核</span></button>
+        <button lay-event="batch-del" class="layui-btn layui-btn-sm layui-btn-primary"><i class="layui-icon layui-icon-delete"></i><span style="margin-right: 3px;font-size: 13px!important;">删除</span></button>
+    </div>
+</script>
+<script type="text/html" id="LAY-report-patcard-unaudit-toolbar">
+    <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="detail"><i class="layui-icon layui-icon-search"></i></a>
+    <a class="layui-btn layui-btn-xs" action="audit" lay-event="audit">审核</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i></a>
+</script>
+<script type="text/html" id="LAY-report-patcard-audited-toolbar">
+    <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="detail"><i class="layui-icon layui-icon-search"></i></a>
+    <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="upload" action="audit" title="重新上传"><i class="layui-icon layui-icon-upload-circle"></i></a>
+    {{#  if(d.postStatus === '已上传'){ }}
+        <a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="out_patinfo"><i class="layui-icon layui-icon-list" title="出院信息"></i></a>
+    {{#  } }} 
+</script>
+<script>
+layui.use('mhdr_report_patcard', layui.factory('mhdr_report_patcard'));
+</script>
+

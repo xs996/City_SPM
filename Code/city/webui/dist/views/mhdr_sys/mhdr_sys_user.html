@@ -1,0 +1,92 @@
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">系统用户 - 检索</div>
+                <div class="layui-card-body">
+                    <div class="layui-form layui-form-pane" lay-filter="LAY-sys-user-query-form">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">姓名</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="name" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+                                </div>
+                                <label class="layui-form-label">工号</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="workNo" placeholder="请输入工号" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <button class="layui-btn" lay-submit lay-filter="userQuery">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">系统用户 - 列表</div>
+                <div class="layui-card-body">
+                    <table id="LAY-sys-user" lay-filter="LAY-sys-user"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="LAY-sys-user-toolbar">
+    <div>
+        <div class="layui-btn-group">
+            <button lay-event="add" class="layui-btn layui-btn-sm">
+                <i class="layui-icon layui-icon-add-1"></i><span style="margin-right: 3px;font-size: 13px!important;">新增</span>
+            </button>
+            <button lay-event="edit" class="layui-btn layui-btn-sm">
+                <i class="layui-icon layui-icon-edit"></i><span style="margin-right: 3px;font-size: 13px!important;">编辑</span>
+            </button>
+            <button lay-event="password" class="layui-btn layui-btn-sm">
+                <i class="layui-icon layui-icon-password"></i><span style="margin-right: 3px;font-size: 13px!important;">重置密码</span>
+            </button>
+            <button lay-event="import" class="layui-btn layui-btn-sm">
+                <i class="layui-icon layui-icon-upload-drag"></i><span style="margin-right: 3px;font-size: 13px!important;">导入</span>
+            </button>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="LAY-sys-user-window">
+    <div style="padding: 20px 30px 10px 30px;text-align: center;">
+        <div class="layui-form layui-form-pane" lay-filter="LAY-sys-user-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户姓名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" placeholder="用户姓名" lay-verify="required" lay-verType="tips" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                    <label class="layui-form-label">用户工号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="workNo" placeholder="用户工号" lay-verify="required" lay-verType="tips" autocomplete="off" class="layui-input">
+                    </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户角色</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="levelCd" value="2" title="直报" checked>
+                    <input type="radio" name="levelCd" value="1" title="医生">
+                    <input type="radio" name="levelCd" value="0" title="护士">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-hide" lay-submit lay-filter="userSubmit"></button>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="LAY-sys-user-enabled">
+    <input type="checkbox" name="enabled" value="1|0" lay-skin="switch" lay-filter="enabled" lay-text="启用|停用" {{ d.enabled == 1 ? 'checked' : '' }}>
+</script>
+
+
+<script>
+    layui.use('mhdr_sys_user', layui.factory('mhdr_sys_user'));
+</script>

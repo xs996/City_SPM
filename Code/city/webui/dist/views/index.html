@@ -1,0 +1,54 @@
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">版本信息</div>
+                <div class="layui-card-body layui-text">
+                    <table class="layui-table" id="versionTable">
+                        <script id="versionTemplate" type="text/html">
+                            <colgroup>
+                                <col width="100">
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <td>前端版本</td>
+                                <td>
+                                    {{d.fontend}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>后端版本</td>
+                                <td>
+                                    {{d.backend}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>数据版本</td>
+                                <td>
+                                    {{d.basicdata}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>使用机构</td>
+                                <td>
+                                    {{d.useOrgan}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>中心机构</td>
+                                <td>
+                                    {{d.centerOrgan}}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </script>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use('mhdr_index', layui.factory('mhdr_index'));
+</script>
