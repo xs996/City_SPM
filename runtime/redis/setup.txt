@@ -1,0 +1,4 @@
+redis-server --service-install --service-name RedisCity redis-app.conf 
+
+sc config RedisCity displayname= "Redis市级平台"
+sc description RedisCity "四川省市级精神卫生平台 Redis"
