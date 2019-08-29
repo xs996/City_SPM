@@ -53,15 +53,15 @@ layui.define(['laytpl', 'layer', '_view'], function(exports){
             ,moveType: 0 //拖拽模式，0或者1
             ,content: '<div class="layui-inline" style="width:100%;text-align:center;margin-bottom: 5px;"><span hyd-filter="loginMsg" style="color: #dd4b39;"></span></div><div class="layui-inline" style="width:100%"><div class="layui-input-inline" style="width:100%"><input id="LAY_expire_pwd" type="password" name="password" lay-verify="pass" placeholder="会话已超时, 请重新输入密码" autocomplete="off" class="layui-input"></div><label id="LAY_expire_login" class="layui-form-label" style="top: 0;right: 0;width: 40px;text-align: center;padding: 10px 0px;position: absolute;cursor: pointer;"><i class="layui-icon fa fa-rotate-180">&#xe65c;</i></label></div><div class="layui-inline" style="width:100%;text-align:center;margin-top: 10px;margin-bottom: 5px;"><span hyd-filter="loginReload" style="cursor: pointer;color: #3c8dbc;">重新登录</span></div>'
             ,success: function(layero, idx){
-                $('.layui-form-label',$(layero)).on('click',function (e) {
+                $('.layui-form-label',layero).on('click',function (e) {
                     var passW0rd = $('#LAY_expire_pwd').val();
                     if (!passW0rd){
-                        $('[hyd-filter=loginMsg]',$(layero)).html('请输入密码');
+                        $('[hyd-filter=loginMsg]',layero).html('请输入密码');
                         return;
                     }
                     $('[hyd-filter=loginMsg]',$(layero)).html('');
                     layui.admin.req({
-                        url: '/rest/System/Login'
+                        url: '/rest/SystemCtr/login'
                         ,type: 'post'
                         ,data: {
                             owner: layui.data(setter.tableName)[request.userInfo].owner,
@@ -77,16 +77,9 @@ layui.define(['laytpl', 'layer', '_view'], function(exports){
                                 ,value: {
                                     owner: res.data[0].owner
                                     ,name: res.data[0].name
-                                    ,gender: res.data[0].gender
-                                    ,cellphone: res.data[0].cellphone
                                     ,levelCd: res.data[0].levelCd
-                                    ,levelName: res.data[0].levelName
                                     ,workNo: res.data[0].workNo
                                     ,org: res.data[0].org
-                                    ,OrganCd: res.data[0].OrganCd
-                                    ,OrgNam: res.data[0].OrgNam
-                                    ,ZoneCd: res.data[0].ZoneCd
-                                    ,ZoneNam: res.data[0].ZoneNam
                                 }
                             });
 
@@ -95,13 +88,13 @@ layui.define(['laytpl', 'layer', '_view'], function(exports){
                                 ,value: res.data[0].owner
                             });
                             layer.close(idx);
-                            if (options.url == '/rest/SysCtr/queryUserMenus'){
+                            if (options.url == '/rest/SystemCtr/queryUserMenus'){
                                 layui.view('TPL_menu').render('menu');
                             }
                         }
                     });
                 });
-                $('[hyd-filter=loginReload]',$(layero)).on('click',function (e) {
+                $('[hyd-filter=loginReload]',layero).on('click',function (e) {
                     layer.close(idx);
                     view.exit();
                 });
@@ -167,8 +160,6 @@ layui.define(['laytpl', 'layer', '_view'], function(exports){
                 
                 //其它异常
                 else {
-                    // var msg = $.errorLocal(res[response.statusName]);
-
                     layer.msg(res[setter.response.msgName], {
                         offset: '30px'
                         ,icon: 2
@@ -212,11 +203,6 @@ layui.define(['laytpl', 'layer', '_view'], function(exports){
             }
         }, options));
     };
-
-
-
-
-
 
     //对外输出
     exports('view', view);

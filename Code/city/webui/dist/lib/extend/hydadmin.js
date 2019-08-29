@@ -16,10 +16,15 @@ layui.define(['view', '_admin'], function(exports){
     ,admin = layui._admin;
 
     admin.userinfo = function() {
-    	var item={name:"测试用户"}
-    	return item;
-        //return layui.data(setter.tableName)[setter.request.userInfo];
+    	var user={name:"模拟用户",levelCd:5,owner:"",workNo:"bj-sc",org:"成都第四人民医院"};
+    	layui.data(setter.tableName, {
+                                key: setter.request.userInfo
+                                ,value: user
+                            });
+        return user;
     };
+    
+    
 
     //对外输出
     exports('admin', admin);

@@ -24,9 +24,9 @@ layui.extend({
     ,renderPage = function(){
         var router = layui.router()
         ,path = router.path
-        ,pathURL = admin.correctRouter(router.path.join('/'));
+        ,pathURL = admin.correctRouter(router.path.join('/'))
 
-        console.log("renderPage:"+pathURL);
+        
         
         //默认读取主页
         if(!path.length) path = [''];
@@ -71,7 +71,6 @@ layui.extend({
         
         //请求视图渲染
         view().render(path.join('/')).then(function(res){
-            
             //遍历页签选项卡
             var matchTo
             ,tabs = $('#LAY_app_tabsheader>li');
@@ -109,7 +108,6 @@ layui.extend({
         }).done(function(){
             layui.use('common', layui.cache.callback.common);
             $win.on('resize', layui.data.resize);
-            
             element.render('breadcrumb', 'breadcrumb');
             
             //容器 scroll 事件，剔除吸附层
@@ -142,8 +140,6 @@ layui.extend({
         ,pathURL = admin.correctRouter(router.path.join('/'))
         ,isIndPage;
         
-        console.log("entryPage pathURL:"+pathURL);
-        console.log("entryPage container:"+setter.container);
         //检查是否属于独立页面
         layui.each(setter.indPage, function(index, item){
             if(pathURL === item){
@@ -173,11 +169,9 @@ layui.extend({
             
             //渲染后台结构
             if(admin.pageType === 'console') { //后台主体页
-            	console.log("后台主体页");
                 renderPage();
             } else { //初始控制台结构
                 container.render('layout').done(function(){
-                	console.log("初始控制台结构");
                     renderPage();
                     layui.element.render();
                     
