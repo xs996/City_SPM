@@ -1,0 +1,46 @@
+{
+	"code": 1,
+	"data": [{
+			"cd": "mhdr_report",
+			"name": "报告",
+			"icon": "layui-icon-edit",
+			"title": "报告",
+			"list": [{
+					"cd": "mhdr_report_patcard",
+					"name": "患者报告卡",
+					"title": "患者报告卡",
+					"list": [],
+					"jump": "mhdr_report/mhdr_report_patcard"
+				}, {
+					"cd": "mhdr_report_out_patinfo",
+					"name": "患者出院信息单",
+					"title": "患者出院信息单",
+					"list": [],
+					"jump": "mhdr_report/mhdr_report_out_patinfo"
+				}
+			],
+			"jump": ""
+		}, {
+			"cd": "mhdr_sys",
+			"name": "系统",
+			"icon": "layui-icon-set",
+			"title": "系统",
+			"list": [{
+					"cd": "mhdr_sys_user",
+					"name": "系统用户",
+					"title": "系统用户",
+					"list": [],
+					"jump": "mhdr_sys/mhdr_sys_user"
+				}, {
+					"cd": "mhdr_sys_map",
+					"name": "字典映射",
+					"title": "字典映射",
+					"list": [],
+					"jump": "mhdr_sys/mhdr_sys_map"
+				}
+			],
+			"jump": ""
+		}
+	],
+	"message": "OK"
+}

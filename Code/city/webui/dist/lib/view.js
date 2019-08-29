@@ -172,7 +172,7 @@ layui.define(['laytpl', 'layer'], function(exports){
   	console.log("Class render:"+views);
     var that = this, router = layui.router();
     views = setter.views + views + setter.engine;
-    
+    console.log("Class full render:"+views);
     $('#'+ LAY_BODY).children('.layadmin-loading').remove();
     view.loading(that.container); //loading
     

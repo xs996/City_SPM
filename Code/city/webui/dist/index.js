@@ -179,7 +179,6 @@ layui.extend({
                 container.render('layout').done(function(){
                 	console.log("初始控制台结构");
                     renderPage();
-                    debugger;
                     layui.element.render();
                     
                     if(admin.screen() < 2){
