@@ -24,9 +24,9 @@ layui.extend({
     ,renderPage = function(){
         var router = layui.router()
         ,path = router.path
-        ,pathURL = admin.correctRouter(router.path.join('/'))
-
+        ,pathURL = admin.correctRouter(router.path.join('/'));
         
+        console.log("renderPage pathURL"+pathURL);       
         
         //默认读取主页
         if(!path.length) path = [''];
@@ -70,7 +70,7 @@ layui.extend({
         }
         
         //请求视图渲染
-        view().render(path.join('/')).then(function(res){
+        view().render(path.join('/')).then(function(res,title){
             //遍历页签选项卡
             var matchTo
             ,tabs = $('#LAY_app_tabsheader>li');
@@ -84,7 +84,7 @@ layui.extend({
                     tabsPage.index = index;
                 }
             });
-            
+			console.log(title);            
             //如果未在选项卡中匹配到，则追加选项卡
             if(setter.pageTabs && pathURL !== '/'){
                 if(!matchTo){
