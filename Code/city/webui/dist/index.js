@@ -19,10 +19,25 @@ layui.extend({
     ,admin = layui.admin
     ,tabsPage = admin.tabsPage
     ,view = layui.view
+
+    //解码hash
+    ,decryHash = function(){
+        var dechash=location.hash;
+        if(dechash.length==0){
+            return layui.router();
+        }
+        var srchash=Base64.decode(dechash.substring(2));
+        return layui.router("#/"+srchash);
+    }
+    //编码hash
+    ,encryHash = function(href){
+        var srchash=Base64.encode(href.substring(1));
+        return "#/"+srchash;
+    }
     
     //根据路由渲染页面
     ,renderPage = function(){
-        var router = layui.router()
+        var router = decryHash()
         ,path = router.path
         ,pathURL = admin.correctRouter(router.path.join('/'));
         
@@ -35,8 +50,9 @@ layui.extend({
         if(path[path.length - 1] === ''){
             path[path.length - 1] = setter.entry;
         }
-        
+
         /*
+        wdnmd
         layui.config({
             base: setter.base + 'controller/'
         });
@@ -78,13 +94,12 @@ layui.extend({
             tabs.each(function(index){
                 var li = $(this)
                 ,layid = li.attr('lay-id');
-                
                 if(layid === pathURL){
                     matchTo = true;
                     tabsPage.index = index;
                 }
             });
-			console.log(title);            
+
             //如果未在选项卡中匹配到，则追加选项卡
             if(setter.pageTabs && pathURL !== '/'){
                 if(!matchTo){
@@ -135,7 +150,7 @@ layui.extend({
     
     //入口页面
     ,entryPage = function(fn){
-        var router = layui.router()
+        var router = decryHash()
         ,container = view(setter.container)
         ,pathURL = admin.correctRouter(router.path.join('/'))
         ,isIndPage;
@@ -148,6 +163,7 @@ layui.extend({
         });
         
         //将模块根路径设置为 controller 目录
+        //lcf/gclt/sjs/ymhd/cmgx
         layui.config({
             base: setter.base + 'controller/'
         });
@@ -169,6 +185,7 @@ layui.extend({
             
             //渲染后台结构
             if(admin.pageType === 'console') { //后台主体页
+                //如果为后台主页,则从新渲染页面
                 renderPage();
             } else { //初始控制台结构
                 container.render('layout').done(function(){
@@ -200,7 +217,7 @@ layui.extend({
     window.onhashchange = function(){
         entryPage();
          //执行 {setter.MOD_NAME}.hash 下的事件
-        layui.event.call(this, setter.MOD_NAME, 'hash({*})', layui.router());
+        layui.event.call(this, setter.MOD_NAME, 'hash({*})', decryHash());
     };
     
     //扩展 lib 目录下的其它模块

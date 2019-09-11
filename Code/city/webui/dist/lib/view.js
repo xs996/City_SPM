@@ -14,6 +14,21 @@ layui.define(['laytpl', 'layer'], function(exports){
   ,setter = layui.setter
   ,device = layui.device()
   ,hint = layui.hint()
+
+   //解码base64
+  ,decode = function (str) {
+    return Base64.decode(str);
+  }
+  //编码base64
+  ,encode = function (str) {
+    return Base64.encode(str);
+  }
+  //指定字符截取字符串
+  ,getCaption = function (obj, char) {
+    var index=obj.lastIndexOf(char);
+    obj=obj.substring(index+1,obj.length);
+    return obj;
+  }
   
   //对外接口
   ,view = function(id){
@@ -42,6 +57,7 @@ layui.define(['laytpl', 'layer'], function(exports){
   
   //清除 token，并跳转到登入页
   view.exit = function(){
+    debugger;
     //清空本地记录的 token
     layui.data(setter.tableName, {
       key: setter.request.tokenName
@@ -189,7 +205,18 @@ layui.define(['laytpl', 'layer'], function(exports){
         
         var elemTitle = $(html).find('title')
         ,title = elemTitle.text() || (html.match(/\<title\>([\s\S]*)\<\/title>/)||[])[1];
-
+        //如果当前title未定义,则直接从url中获取title
+        if(typeof title == 'undefined'){
+          var str = window.location.href;
+          //获取加密后的url
+          var newStr = getCaption(str,"#");
+          var decodeStr = decode(newStr.substring(1,newStr.length));
+          var newdecodeStr = getCaption(decodeStr,"/");
+          if(newdecodeStr.startsWith('title=')){
+            //如果url中最后一个参数是title=xxx,则对title进行赋值
+            title = getCaption(newdecodeStr,'=');
+          }
+        }
         var res = {
           title: title
           ,body: html

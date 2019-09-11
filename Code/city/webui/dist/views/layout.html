@@ -1,6 +1,7 @@
 <script type="text/html" template>
     <link rel="stylesheet" href="{{ layui.setter.base }}style/{{ layui.cache.project }}-base.css?v={{ layui.admin.v }}-1" media="all">
 </script>
+
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
     <!-- 头部区域 -->
@@ -23,6 +24,11 @@
           <i class="layui-icon layui-icon-screen-full"></i>
         </a>
       </li>
+      <li class="layui-nav-item layui-hide-xs" lay-unselect="">
+        <a href="javascript:;" layadmin-event="theme">
+          <i class="layui-icon layui-icon-theme"></i>
+        </a>
+      </li>
       <li class="layui-nav-item" lay-unselect>
         <script type="text/html" template 
         lay-done="layui.element.render('nav', 'layadmin-layout-right');">
@@ -30,12 +36,13 @@
             <cite>{{ layui.admin.userinfo().name }}</cite>
           </a>
           <dl class="layui-nav-child">
+            <!-- 右上角下拉菜单 -->
             <dd><a lay-href="set/user/password">修改密码</a></dd>
+            <dd><a lay-href="user/systemuser">基本资料</a></dd>
             <dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>
           </dl>
         </script>
       </li>
-      
       <li class="layui-nav-item layui-hide-xs" lay-unselect>
         <i class="layui-icon layui-icon-more-vertical"></i></a>
       </li>
@@ -47,7 +54,6 @@
     <script type="text/html" template lay-done="layui.view('TPL_menu').render('menu');">
     </script>
   </div>
-  
 
   <!-- 页面标签 -->
   <script type="text/html" template lay-done="layui.element.render('nav', 'layadmin-pagetabs-nav')">
@@ -84,5 +90,6 @@
   
   <!-- 辅助元素，一般用于移动设备下遮罩 -->
   <div class="layadmin-body-shade" layadmin-event="shade"></div>
+
   
 </div>

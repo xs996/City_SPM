@@ -54,8 +54,9 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     
     //独立页面路由，可随意添加（无需写参数）
     ,indPage: [
-      '/user/login' //登入页
+       '/user/login' //登入页
       ,'/quick/' //快速界面
+      ,'/test/' //测试页面
     ]
     
     //扩展的第三方模块

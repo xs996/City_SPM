@@ -1,12 +1,14 @@
 /**
-
  @Name：layuiAdmin 核心模块
  @Author：贤心
  @Site：http://www.layui.com/admin/
  @License：LPPL
-    
  */
- 
+
+
+
+
+
 layui.define('view', function(exports){
   var $ = layui.jquery
   ,laytpl = layui.laytpl
@@ -25,6 +27,25 @@ layui.define('view', function(exports){
   ,ICON_SHRINK = 'layui-icon-shrink-right', ICON_SPREAD = 'layui-icon-spread-left'
   ,SIDE_SHRINK = 'layadmin-side-shrink', SIDE_MENU = 'LAY-system-side-menu'
 
+  //解码hash
+  ,decryHash = function(){
+    var dechash=location.hash;
+    if(dechash.length==0){
+      return layui.router();
+    }
+    var srchash=Base64.decode(dechash.substring(2));
+    return layui.router("#/"+srchash);
+  }
+  //编码hash
+  ,encryHash = function(href){
+    var srchash=Base64.encode(href.substring(1));
+    return "#/"+srchash;
+  }
+  //解码base64
+  ,decoudeBase = function (str) {
+      var base = Base64();
+      return base.decode(str);
+  }
   //通用方法
   ,admin = {
     v: '1.2.1 pro'
@@ -313,6 +334,7 @@ layui.define('view', function(exports){
       ,key = router.path.join('-');
       admin.resizeFn[key] && admin.resizeFn[key]();
     }
+
     ,delResize: function(){
       this.resize('off');
     }
@@ -501,19 +523,18 @@ layui.define('view', function(exports){
     
     //左右滚动页面标签
     ,rollPage: function(type, index){
-      var tabsHeader = $('#LAY_app_tabsheader')
-      ,liItem = tabsHeader.children('li')
-      ,scrollWidth = tabsHeader.prop('scrollWidth')
-      ,outerWidth = tabsHeader.outerWidth()
+      var tabsHeader = $('#LAY_app_tabsheader')//当前标签页父级菜单
+      ,liItem = tabsHeader.children('li')//当前菜单集合
+      ,scrollWidth = tabsHeader.prop('scrollWidth')//当前菜单页宽度
+      ,outerWidth = tabsHeader.outerWidth()//结束菜单页宽度
       ,tabsLeft = parseFloat(tabsHeader.css('left'));
-      
-      //右左往右
+      //向右滚动
       if(type === 'left'){
         if(!tabsLeft && tabsLeft <=0) return;
         
         //当前的left减去可视宽度，用于与上一轮的页标比较
-        var  prefLeft = -tabsLeft - outerWidth; 
-
+        var  prefLeft = -tabsLeft - outerWidth;
+        console.log(tabsLeft);
         liItem.each(function(index, item){
           var li = $(item)
           ,left = li.position().left;
@@ -642,11 +663,11 @@ layui.define('view', function(exports){
     }
     
   }();
-  
-  //admin.prevRouter = {}; //上一个路由
-  
+
   //监听 hash 改变侧边状态
   admin.on('hash(side)', function(router){
+
+    //由于当前router对象在传输前已经进行解码,所以此处是明文的url
     var path = router.path, getData = function(item){
       return {
         list: item.children('.layui-nav-child')
@@ -654,11 +675,12 @@ layui.define('view', function(exports){
         ,jump: item.data('jump')
       }
     }
-    ,sideMenu = $('#'+ SIDE_MENU)
-    ,SIDE_NAV_ITEMD = 'layui-nav-itemed'
-    
+        ,sideMenu = $('#'+ SIDE_MENU)
+        ,SIDE_NAV_ITEMD = 'layui-nav-itemed'
+
+
     //捕获对应菜单
-    ,matchMenu = function(list){
+    matchMenu = function(list){
       var pathURL = admin.correctRouter(path.join('/'));
       list.each(function(index1, item1){
         var othis1 = $(item1)
@@ -771,21 +793,26 @@ layui.define('view', function(exports){
     //移除resize事件
     admin.delResize();
   });
-  
+
+
+
   //页面跳转
   $body.on('click', '*[lay-href]', function(){
     var othis = $(this)
-    ,href = othis.attr('lay-href')
-    ,router = layui.router();
-    
+        ,href = othis.attr('lay-href')
+        //对router对象进行base64加密
+        ,router = decryHash();
+
     admin.tabsPage.elem = othis;
     //admin.prevRouter[router.path[0]] = router.href; //记录上一次各菜单的路由信息
 
-    //执行跳转
-    location.hash = admin.correctRouter(href);
+    //执行跳转前,需要将当前lable的title传递到href中并加密
+    href = href + "/title="+$(this).html();
+    location.hash = encryHash(admin.correctRouter(href));
   });
-  
-  //点击事件
+
+
+  //标签页点击事件
   $body.on('click', '*[layadmin-event]', function(){
     var othis = $(this)
     ,attrEvent = othis.attr('layadmin-event');

@@ -18,6 +18,7 @@ layui.define(function(exports) {
       '#59678c','#c9ab00','#7eb00a','#6f5553','#c14089'
     ],
 
+
     // 图表标题
     title: {
       textStyle: {

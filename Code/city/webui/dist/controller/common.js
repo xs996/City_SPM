@@ -33,12 +33,15 @@ layui.define(function(exports){
                         layer.close(index);
                         //清空本地记录的 token，并跳转到登入页
                         admin.exit();
+                        debugger;
                     }
                 });
             }
         });
 
     };
+
+
 
     
     //对外暴露的接口
