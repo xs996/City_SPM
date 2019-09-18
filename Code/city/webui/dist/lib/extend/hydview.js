@@ -39,6 +39,7 @@ layui.define(['laytpl', 'layer', '_view'], function(exports){
         location.hash = '/user/login'; 
     };
 
+
     view.reLogin=function(request,options){
         layer.open({
             type: 1
