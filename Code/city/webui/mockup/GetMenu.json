@@ -1,46 +1,489 @@
 {
-	"code": 1,
-	"data": [{
-			"cd": "mhdr_report",
-			"name": "报告",
-			"icon": "layui-icon-edit",
-			"title": "报告",
-			"list": [{
-					"cd": "mhdr_report_patcard",
-					"name": "患者报告卡",
-					"title": "患者报告卡",
-					"list": [],
-					"jump": "mhdr_report/mhdr_report_patcard"
-				}, {
-					"cd": "mhdr_report_out_patinfo",
-					"name": "患者出院信息单",
-					"title": "患者出院信息单",
-					"list": [],
-					"jump": "mhdr_report/mhdr_report_out_patinfo"
+"code":"1",
+"data":[
+		{	
+			"cd":"M0100",
+			"name":"地区管理",
+			"icon":"",
+			"title":"地区管理",
+			"list":[],
+			"jump":""
+		},{
+			"cd":"M0200",
+			"name":"机构管理",
+			"icon":"",
+			"title":"机构管理",
+			"list":[
+				{
+					"cd":"M0201",
+					"name":"机构维护",
+					"title":"机构维护",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0202",
+					"name":"机构变更",
+					"title":"机构变更",
+					"list":[],
+					"jump":""
 				}
 			],
-			"jump": ""
-		}, {
-			"cd": "mhdr_sys",
-			"name": "系统",
-			"icon": "layui-icon-set",
-			"title": "系统",
-			"list": [{
-					"cd": "mhdr_sys_user",
-					"name": "系统用户",
-					"title": "系统用户",
-					"list": [],
-					"jump": "mhdr_sys/mhdr_sys_user"
-				}, {
-					"cd": "mhdr_sys_map",
-					"name": "字典映射",
-					"title": "字典映射",
-					"list": [],
-					"jump": "mhdr_sys/mhdr_sys_map"
+			"jump":""
+		},{
+			"cd":"M300",
+			"name":"用户管理",
+			"icon":"",
+			"title":"用户管理",
+			"list":[
+				{
+					"cd":"M0301",
+					"name":"用户维护",
+					"title":"用户维护",
+					"list":[],
+					"jump":""
+				},
+				{
+					"cd":"M0302",
+					"name":"无活动用户",
+					"title":"无活动用户",
+					"list":[],
+					"jump":""
+				}
+
+			],
+			"jump":""
+		},{
+			"cd":"M0400",
+			"name":"患者信息统计",
+			"icon":"",
+			"title":"患者信息统计",
+			"list":[
+				{
+					"cd":"M0401",
+					"name":"个案管理",
+					"title":"个案管理",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0402",
+					"name":"建档情况",
+					"title":"建档情况",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0403",
+					"name":"一般信息",
+					"title":"一般信息",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0404",
+					"name":"失访和死亡",
+					"title":"失访和死亡",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0405",
+					"name":"治疗情况",
+					"title":"治疗情况",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0406",
+					"name":"管理情况",
+					"title":"管理情况",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0407",
+					"name":"基础管理",
+					"title":"基础管理",
+					"list":[],
+					"jump":""
 				}
 			],
-			"jump": ""
-		}
-	],
-	"message": "OK"
+			"jump":""
+		},{
+			"cd":"M0500",
+			"name":"年度工作报表录入",
+			"icon":"",
+			"title":"年度工作报表录入",
+			"list":[
+				{
+					"cd":"M0501",
+					"name":"危险行为发生情况",
+					"title":"危险行为发生情况",
+					"list":[],
+					"jump":""
+				},{
+					
+					"cd":"M0502",
+					"name":"经费到位及使用",
+					"title":"经费到位及使用",
+					"list":[],
+					"jump":""
+				},{
+					
+					"cd":"M0503",
+					"name":"工作指标完成情况",
+					"title":"工作指标完成情况",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0504",
+					"name":"机构及人员数",
+					"title":"机构及人员数",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0505",
+					"name":"培训情况",
+					"title":"培训情况",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M0600",
+			"name":"年度工作报表统计",
+			"icon":"",
+			"title":"年度工作报表统计",
+			"list":[
+				{
+					"cd":"M0601",
+					"name":"危险行为发生情况",
+					"title":"危险行为发生情况",
+					"list":[],
+					"jump":""
+				},{
+					
+					"cd":"M0602",
+					"name":"经费到位及使用",
+					"title":"经费到位及使用",
+					"list":[],
+					"jump":""
+				},{
+					
+					"cd":"M0603",
+					"name":"工作指标完成情况",
+					"title":"工作指标完成情况",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0604",
+					"name":"机构及人员数",
+					"title":"机构及人员数",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0605",
+					"name":"培训情况",
+					"title":"培训情况",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M0700",
+			"name":"患者信息管理",
+			"icon":"",
+			"title":"患者信息管理",
+			"list":[
+				{
+					"cd":"M0701",
+					"name":"在管患者",
+					"title":"在管患者",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0702",
+					"name":"死亡患者",
+					"title":"死亡患者",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0703",
+					"name":"失访患者",
+					"title":"失访患者",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0704",
+					"name":"非在管患者",
+					"title":"非在管患者",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0705",
+					"name":"重复患者查询",
+					"title":"重复患者查询",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0706",
+					"name":"不明身份患者",
+					"title":"不明身份患者",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0707",
+					"name":"数据恢复",
+					"title":"数据恢复",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M0800",
+			"name":"签约管理",
+			"icon":"",
+			"title":"签约管理",
+			"list":[
+				{
+					"cd":"M0801",
+					"name":"机构诊断服务签约",
+					"title":"机构诊断服务签约",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M0900",
+			"name":"患者档案管理",
+			"icon":"",
+			"title":"患者档案管理",
+			"list":[
+				{
+					"cd":"M0901",
+					"name":"建档信息管理",
+					"title":"建档信息管理",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0902",
+					"name":"随访信息审核",
+					"title":"随访信息审核",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M0903",
+					"name":"应急处置审核",
+					"title":"应急处置审核",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M1000",
+			"name":"线索调查",
+			"icon":"",
+			"title":"线索调查",
+			"list":[
+				{
+					"cd":"M1001",
+					"name":"疑似患者线索调查",
+					"title":"疑似患者线索调查",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1002",
+					"name":"患者线索跟踪",
+					"title":"随访信息审核",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M1100",
+			"name":"远程诊断与复核",
+			"icon":"",
+			"title":"远程诊断与复核",
+			"list":[
+				{
+					"cd":"M1101",
+					"name":"诊断复核申请",
+					"title":"诊断复核申请",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1102",
+					"name":"诊断复核查询",
+					"title":"诊断复核查询",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1103",
+					"name":"患者处方信息查询",
+					"title":"患者处方信息查询",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1104",
+					"name":"患者调药信息查询",
+					"title":"患者调药信息查询",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M1200",
+			"name":"患者管理",
+			"icon":"",
+			"title":"患者管理",
+			"list":[
+				{
+					"cd":"M1201",
+					"name":"患者档案",
+					"title":"患者档案",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1202",
+					"name":"患者随访",
+					"title":"患者随访",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1203",
+					"name":"疑似患者线索调查",
+					"title":"疑似患者线索调查",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M1300",
+			"name":"",
+			"icon":"",
+			"title":"",
+			"list":[
+				{
+					"cd":"M1301",
+					"name":"协同医生管理",
+					"title":"协同医生管理",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1302",
+					"name":"诊断复核安排",
+					"title":"诊断复核查询",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1303",
+					"name":"诊断复核查询",
+					"title":"诊断复核查询",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1304",
+					"name":"患者调药查询",
+					"title":"患者调药查询",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1305",
+					"name":"病情评估查询",
+					"title":"病情评估查询",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M1400",
+			"name":"诊断与复核",
+			"icon":"",
+			"title":"诊断与复核",
+			"list":[
+				{
+					"cd":"M1401",
+					"name":"远程诊断",
+					"title":"远程诊断",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1402",
+					"name":"患者复核",
+					"title":"患者复核",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1403",
+					"name":"患者停药管理",
+					"title":"患者停药管理",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M1404",
+					"name":"患者病情评估",
+					"title":"患者病情评估",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+		},{
+			"cd":"M9000",
+			"name":"省网管理",
+			"icon":"",
+			"title":"省网管理",
+			"list":[],
+			"jump":""
+		},{
+			"cd":"M9900",
+			"name":"系统管理",
+			"icon":"",
+			"title":"系统管理",
+			"list":[
+				{
+					"cd":"M9901",
+					"name":"系统设置",
+					"title":"系统设置",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M9902",
+					"name":"字典同步",
+					"title":"字典同步",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M9903",
+					"name":"地区同步",
+					"title":"地区同步",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M9904",
+					"name":"机构同步",
+					"title":"机构同步",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M9905",
+					"name":"用户同步",
+					"title":"用户同步",
+					"list":[],
+					"jump":""
+				},{
+					"cd":"M9906",
+					"name":"患者档案同步",
+					"title":"患者档案同步",
+					"list":[],
+					"jump":""
+				}
+			],
+			"jump":""
+	}
+],
+"message":"ok"
 }
