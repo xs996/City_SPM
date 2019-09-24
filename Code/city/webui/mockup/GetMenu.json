@@ -7,7 +7,7 @@
 			"icon":"",
 			"title":"地区管理",
 			"list":[],
-			"jump":""
+			"jump":"mhdr_report/mhdr_report_out_patinfo"
 		},{
 			"cd":"M0200",
 			"name":"机构管理",
@@ -19,13 +19,13 @@
 					"name":"机构维护",
 					"title":"机构维护",
 					"list":[],
-					"jump":""
+					"jump":"manage/organmainten"
 				},{
 					"cd":"M0202",
 					"name":"机构变更",
 					"title":"机构变更",
 					"list":[],
-					"jump":""
+					"jump":"manage/organchange"
 				}
 			],
 			"jump":""
@@ -40,14 +40,14 @@
 					"name":"用户维护",
 					"title":"用户维护",
 					"list":[],
-					"jump":""
+					"jump":"manage/usermainten"
 				},
 				{
 					"cd":"M0302",
 					"name":"无活动用户",
 					"title":"无活动用户",
 					"list":[],
-					"jump":""
+					"jump":"manage/usernoactive"
 				}
 
 			],
@@ -63,43 +63,43 @@
 					"name":"个案管理",
 					"title":"个案管理",
 					"list":[],
-					"jump":""
+					"jump":"report/personalcase"
 				},{
 					"cd":"M0402",
 					"name":"建档情况",
 					"title":"建档情况",
 					"list":[],
-					"jump":""
+					"jump":"report/documentfile"
 				},{
 					"cd":"M0403",
 					"name":"一般信息",
 					"title":"一般信息",
 					"list":[],
-					"jump":""
+					"jump":"report/generalinfo"
 				},{
 					"cd":"M0404",
 					"name":"失访和死亡",
 					"title":"失访和死亡",
 					"list":[],
-					"jump":""
+					"jump":"report/lostdeath"
 				},{
 					"cd":"M0405",
 					"name":"治疗情况",
 					"title":"治疗情况",
 					"list":[],
-					"jump":""
+					"jump":"report/cureinfo"
 				},{
 					"cd":"M0406",
 					"name":"管理情况",
 					"title":"管理情况",
 					"list":[],
-					"jump":""
+					"jump":"report/manageinfo"
 				},{
 					"cd":"M0407",
 					"name":"基础管理",
 					"title":"基础管理",
 					"list":[],
-					"jump":""
+					"jump":"report/basicinfo"
 				}
 			],
 			"jump":""
@@ -114,33 +114,33 @@
 					"name":"危险行为发生情况",
 					"title":"危险行为发生情况",
 					"list":[],
-					"jump":""
+					"jump":"yearwork/dangeroccur"
 				},{
 					
 					"cd":"M0502",
 					"name":"经费到位及使用",
 					"title":"经费到位及使用",
 					"list":[],
-					"jump":""
+					"jump":"yearwork/workcostused"
 				},{
 					
 					"cd":"M0503",
 					"name":"工作指标完成情况",
 					"title":"工作指标完成情况",
 					"list":[],
-					"jump":""
+					"jump":"yearwork/workquota"
 				},{
 					"cd":"M0504",
 					"name":"机构及人员数",
 					"title":"机构及人员数",
 					"list":[],
-					"jump":""
+					"jump":"yearwork/organuser"
 				},{
 					"cd":"M0505",
 					"name":"培训情况",
 					"title":"培训情况",
 					"list":[],
-					"jump":""
+					"jump":"yearwork/traininfo"
 				}
 			],
 			"jump":""
@@ -155,33 +155,33 @@
 					"name":"危险行为发生情况",
 					"title":"危险行为发生情况",
 					"list":[],
-					"jump":""
+					"jump":"yearreport/dangeroccur"
 				},{
 					
 					"cd":"M0602",
 					"name":"经费到位及使用",
 					"title":"经费到位及使用",
 					"list":[],
-					"jump":""
+					"jump":"yearreport/reportcostused"
 				},{
 					
 					"cd":"M0603",
 					"name":"工作指标完成情况",
 					"title":"工作指标完成情况",
 					"list":[],
-					"jump":""
+					"jump":"yearreport/reportquota"
 				},{
 					"cd":"M0604",
 					"name":"机构及人员数",
 					"title":"机构及人员数",
 					"list":[],
-					"jump":""
+					"jump":"yearreport/organuser"
 				},{
 					"cd":"M0605",
 					"name":"培训情况",
 					"title":"培训情况",
 					"list":[],
-					"jump":""
+					"jump":"yearreport/traininfo"
 				}
 			],
 			"jump":""
@@ -196,43 +196,43 @@
 					"name":"在管患者",
 					"title":"在管患者",
 					"list":[],
-					"jump":""
+					"jump":"patinfo/managepat"
 				},{
 					"cd":"M0702",
 					"name":"死亡患者",
 					"title":"死亡患者",
 					"list":[],
-					"jump":""
+					"jump":"patinfo/deathpat"
 				},{
 					"cd":"M0703",
 					"name":"失访患者",
 					"title":"失访患者",
 					"list":[],
-					"jump":""
+					"jump":"patinfo/lostpat"
 				},{
 					"cd":"M0704",
 					"name":"非在管患者",
 					"title":"非在管患者",
 					"list":[],
-					"jump":""
+					"jump":"patinfo/nomanagepat"
 				},{
 					"cd":"M0705",
 					"name":"重复患者查询",
 					"title":"重复患者查询",
 					"list":[],
-					"jump":""
+					"jump":"patinfo/repeatpat"
 				},{
 					"cd":"M0706",
 					"name":"不明身份患者",
 					"title":"不明身份患者",
 					"list":[],
-					"jump":""
+					"jump":"patinfo/unknownpat"
 				},{
 					"cd":"M0707",
 					"name":"数据恢复",
 					"title":"数据恢复",
 					"list":[],
-					"jump":""
+					"jump":"patinfo/restorepat"
 				}
 			],
 			"jump":""
@@ -247,7 +247,7 @@
 					"name":"机构诊断服务签约",
 					"title":"机构诊断服务签约",
 					"list":[],
-					"jump":""
+					"jump":"signing/diagnosisorgan"
 				}
 			],
 			"jump":""
@@ -262,19 +262,19 @@
 					"name":"建档信息管理",
 					"title":"建档信息管理",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/auditpatinfo"
 				},{
 					"cd":"M0902",
 					"name":"随访信息审核",
 					"title":"随访信息审核",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/auditpatfollowup"
 				},{
 					"cd":"M0903",
 					"name":"应急处置审核",
 					"title":"应急处置审核",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/auditpatemergency"
 				}
 			],
 			"jump":""
@@ -289,13 +289,13 @@
 					"name":"疑似患者线索调查",
 					"title":"疑似患者线索调查",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/patcluefollow"
 				},{
 					"cd":"M1002",
 					"name":"患者线索跟踪",
 					"title":"随访信息审核",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/patcluetrace"
 				}
 			],
 			"jump":""
@@ -310,25 +310,25 @@
 					"name":"诊断复核申请",
 					"title":"诊断复核申请",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/diagnosisapply"
 				},{
 					"cd":"M1102",
 					"name":"诊断复核查询",
 					"title":"诊断复核查询",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/patdiagnosis"
 				},{
 					"cd":"M1103",
 					"name":"患者处方信息查询",
 					"title":"患者处方信息查询",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/patprescription"
 				},{
 					"cd":"M1104",
 					"name":"患者调药信息查询",
 					"title":"患者调药信息查询",
 					"list":[],
-					"jump":""
+					"jump":"patmanage/patdruginfo"
 				}
 			],
 			"jump":""
@@ -343,19 +343,19 @@
 					"name":"患者档案",
 					"title":"患者档案",
 					"list":[],
-					"jump":""
+					"jump":"vallige/patmanage"
 				},{
 					"cd":"M1202",
 					"name":"患者随访",
 					"title":"患者随访",
 					"list":[],
-					"jump":""
+					"jump":"vallige/patfollowup"
 				},{
 					"cd":"M1203",
 					"name":"疑似患者线索调查",
 					"title":"疑似患者线索调查",
 					"list":[],
-					"jump":""
+					"jump":"vallige/patcluefollow"
 				}
 			],
 			"jump":""
@@ -363,38 +363,38 @@
 			"cd":"M1300",
 			"name":"协同服务",
 			"icon":"",
-			"title":"",
+			"title":"协同服务",
 			"list":[
 				{
 					"cd":"M1301",
 					"name":"协同医生管理",
 					"title":"协同医生管理",
 					"list":[],
-					"jump":""
+					"jump":"coodination/doctor"
 				},{
 					"cd":"M1302",
 					"name":"诊断复核安排",
 					"title":"诊断复核查询",
 					"list":[],
-					"jump":""
+					"jump":"coodination/arrangediagnosis"
 				},{
 					"cd":"M1303",
 					"name":"诊断复核查询",
 					"title":"诊断复核查询",
 					"list":[],
-					"jump":""
+					"jump":"coodination/diagnosispatinfo"
 				},{
 					"cd":"M1304",
 					"name":"患者调药查询",
 					"title":"患者调药查询",
 					"list":[],
-					"jump":""
+					"jump":"coodination/patdruginfo"
 				},{
 					"cd":"M1305",
 					"name":"病情评估查询",
 					"title":"病情评估查询",
 					"list":[],
-					"jump":""
+					"jump":"coodination/patillnessinfo"
 				}
 			],
 			"jump":""
@@ -409,25 +409,25 @@
 					"name":"远程诊断",
 					"title":"远程诊断",
 					"list":[],
-					"jump":""
+					"jump":"doctor/diagnosis"
 				},{
 					"cd":"M1402",
 					"name":"患者复核",
 					"title":"患者复核",
 					"list":[],
-					"jump":""
+					"jump":"doctor/patcheckeval"
 				},{
 					"cd":"M1403",
 					"name":"患者停药管理",
 					"title":"患者停药管理",
 					"list":[],
-					"jump":""
+					"jump":"doctor/patdrugmanage"
 				},{
 					"cd":"M1404",
 					"name":"患者病情评估",
 					"title":"患者病情评估",
 					"list":[],
-					"jump":""
+					"jump":"doctor/patillnessmanage"
 				}
 			],
 			"jump":""
