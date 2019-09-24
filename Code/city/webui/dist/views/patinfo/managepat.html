@@ -1,0 +1,147 @@
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">在管患者 - 检索</div>
+                        <div class="layui-card-body">                            
+                            <div class="layui-form layui-form-pane">                            
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">管理地区</label>
+                                        <div class="layui-input-inline">
+                                            <select name="zone" class="layui-input" style="display: block;">
+                                                <option value="">请选择</option>
+                                                <option value="0">北京</option>
+                                                <option value="1">上海</option>
+                                                <option value="2">广州</option>
+                                                <option value="3">深圳</option>
+                                                <option value="4">杭州</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">管理单位</label>
+                                        <div class="layui-input-inline">
+                                            <select name="org" class="layui-input" style="display: block;">
+                                                <option value="">请选择</option>
+                                                <option value="0">北京大学</option>
+                                                <option value="1">上海大学</option>
+                                                <option value="2">广州大学</option>
+                                                <option value="3">深圳大学</option>
+                                                <option value="4">杭州大学</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">患者姓名</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="patname" placeholder="" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">患者编号</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="patCd" placeholder="" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">身份证号</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="patIdCd" placeholder="" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                 </div>
+                                 <div class="layui-form-item">    
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">目前诊断</label>
+                                        <div class="layui-input-inline">
+                                            <select name="dis" class="layui-input" style="display: block;">
+                                                <option value="">请选择</option>
+                                                <option value="0">北京大学</option>
+                                                <option value="1">上海大学</option>
+                                                <option value="2">广州大学</option>
+                                                <option value="3">深圳大学</option>
+                                                <option value="4">杭州大学</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">性别</label>
+                                        <div class="layui-input-inline">
+                                            <select name="sex" class="layui-input" style="display: block;">
+                                                <option value="">请选择</option>
+                                                <option value="0">男</option>
+                                                <option value="1">女</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">出生日期</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" class="layui-input date"  name="start" placeholder="yyyy-MM-dd">
+                                            <span>至</span>
+                                            <input type="text" class="layui-input date"  name="end" placeholder="yyyy-MM-dd">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">创建日期</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" id="date1" class="layui-input date"  name="start" placeholder="yyyy-MM-dd">
+                                            <span>至</span>
+                                            <input type="text" class="layui-input date"  name="end" placeholder="yyyy-MM-dd">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <button class="layui-btn layui-btn-sm" lay-submit lay-filter="reportQuery">查询</button>
+                                    <button class="layui-btn layui-btn-danger layui-btn-sm" lay-submit lay-filter="reportReset">重置</button>
+                                    <button class="layui-btn layui-btn-normal layui-btn-sm" lay-submit lay-filter="add">新增</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header">查询结果</div>
+                                <div class="layui-tab-content">
+                                    <div class="layui-tab-item layui-show">
+                                        <table id="managepatpat" lay-filter="managepatpat_filter" class="layui-table">
+
+                                        </table>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="operation">
+    <div class="layui-btn-group">
+        <a href="/dist/views/patmanage/managepat_view.html" title="查看"><img src="/dist/images/PatInfoManage/chakan.png"/></a>
+        <a href="" title="修改"><img src="/dist/images/PatInfoManage/bianji.png"/></a>
+        <a href="" title="删除"><img src="/dist/images/PatInfoManage/shanchu.png"/></a>
+        <a href="" title="随访"><img src="/dist/images/PatInfoManage/suifang.png"/></a>
+        <a href="" title="迁出"><img src="/dist/images/PatInfoManage/qianchu.png"/></a>
+        <a href="" title="转死亡"><img src="/dist/images/PatInfoManage/zhuansiwang.png"/></a>
+        <a href="" title="启用APP"><img src="/dist/images/appno.jpg" style="width: 15px;height: 18px;"/></a>
+        <a href="" title="查看患者报告"><img src="/dist/images/view_report.png"/></a>
+    </div>
+</script>
+<script>
+
+layui.use('patinfo/managepat_view', layui.factory('managepat_view'));
+
+</script>
+
+
+
