@@ -22,14 +22,7 @@ layui.define(['view','admin'], function(exports){
 			,date: /^(\d{4})[-\/](\d{1}|0\d{1}|1[0-2])([-\/](\d{1}|0\d{1}|[1-2][0-9]|3[0-1]))*$/
 			,phone: /^((\+?86)|(\+86))?(1[3-9][0-9]{9})$/
             ,mobilePhone: /^([0-9]{3,4}-)?[0-9]{7,8}$/
-		},
-		regis:{
-		    pagesx:{},
-            test:{
-		        ke:k2,
-                wa:w2
-            },
-        }
+		}
         ,openWindow: function(options) {
             layer.open($.extend({
                 type: 1

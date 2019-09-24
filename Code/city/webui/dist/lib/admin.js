@@ -806,8 +806,8 @@ layui.define('view', function(exports){
     admin.tabsPage.elem = othis;
     //admin.prevRouter[router.path[0]] = router.href; //记录上一次各菜单的路由信息
 
-    //执行跳转前,需要将当前lable的title传递到href中并加密
-    href = href + "/title="+$(this).html();
+    //执行跳转前,需要将当前lable的title传递到href中并加密(目前title加密会出现url跳转错误问题,先取消加密title)
+    //href = href + "/title="+$(this).html();
     location.hash = encryHash(admin.correctRouter(href));
   });
 
